@@ -9,10 +9,6 @@
  */
 exports = async function(changeEvent, func2) {
   console.log('Updating Bullhorn Candiate...');
-
-  context.functions.execute("test/workersEntityBullhornCandidate", '123456789');
-
-  //console.log('>>> ', JSON.stringify(func2));
   
   if (!changeEvent.fullDocument) {
     console.log('Full document not available. This indicates that the document has been deleted.');
