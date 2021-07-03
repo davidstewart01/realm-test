@@ -15,7 +15,7 @@ exports = function(arg){
     Try running in the console below.
   */
   
-  console.log('>>>>>>>>>>>>>>> IN Utility FUNCTION!!!!!');
+  console.log('>>>>>>>>>>>>>>> IN Utility FUNCTION!!!!!', arg);
   
   return {arg: arg};
 };

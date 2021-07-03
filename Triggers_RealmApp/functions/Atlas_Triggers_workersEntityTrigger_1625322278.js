@@ -1,5 +1,7 @@
 exports = async function(changeEvent) {
   console.log('In workersEntity trigger...');
+  
+  context.functions.execute("workersEntityBullhornCandidate", '123456789');
 
   const updatedDocument = changeEvent.fullDocument
   
