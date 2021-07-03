@@ -8,11 +8,11 @@
         "private": false
     },
     {
-        "name": "workersEntity-trigger",
+        "name": "workersEntity_trigger",
         "private": false
     },
     {
-        "name": "workersEntity-bullhornCandidateProcessor",
+        "name": "workersEntity_bullhornCandidateProcessor",
         "private": false
     }
 ]

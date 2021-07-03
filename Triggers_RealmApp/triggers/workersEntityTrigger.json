@@ -18,6 +18,6 @@
         "full_document_before_change": true,
         "unordered": false
     },
-    "function_name": "workersEntity-trigger",
+    "function_name": "workersEntity_trigger",
     "disabled": false
 }
