@@ -15,7 +15,7 @@
         "match": {},
         "project": {},
         "full_document": true,
-        "full_document_before_change": false,
+        "full_document_before_change": true,
         "unordered": false
     },
     "function_name": "Atlas_Triggers_bullhornTestTrigger_1625229841",

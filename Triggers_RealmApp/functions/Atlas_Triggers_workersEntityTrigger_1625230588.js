@@ -1,9 +1,6 @@
 exports = async function(changeEvent) {
   console.log('In workersEntity trigger...');
   
-  console.log(`>>>>>>>>>>>>++++++++>>>>>>>>> `, JSON.stringify(changeEvent));
-  
-  
   const updatedDocument = changeEvent.fullDocument
   
   const databaseName = 'view-service';
