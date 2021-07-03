@@ -12,7 +12,7 @@
         "private": false
     },
     {
-        "name": "/test/workersEntityBullhornCandidate",
+        "name": "test/workersEntityBullhornCandidate",
         "private": false
     }
 ]
