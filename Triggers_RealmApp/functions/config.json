@@ -4,11 +4,15 @@
         "private": false
     },
     {
+        "name": "Atlas_Triggers_paylocityTrigger_1625153357",
+        "private": false
+    },
+    {
         "name": "Atlas_Triggers_workersEntityTrigger_1625230588",
         "private": false
     },
     {
-        "name": "Atlas_Triggers_paylocityTrigger_1625153357",
+        "name": "workersEntityBullhornCandidate",
         "private": false
     }
 ]
