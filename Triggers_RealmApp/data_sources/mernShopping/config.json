@@ -1,0 +1,11 @@
+{
+    "name": "mernShopping",
+    "type": "mongodb-atlas",
+    "config": {
+        "clusterName": "mernShopping",
+        "namespacePreimageConfigs": [],
+        "readPreference": "primary",
+        "wireProtocolEnabled": false
+    },
+    "version": 1
+}

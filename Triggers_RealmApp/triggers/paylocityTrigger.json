@@ -1,0 +1,23 @@
+{
+    "id": "60cc74691292d093825327cd",
+    "name": "paylocityTrigger",
+    "type": "DATABASE",
+    "config": {
+        "operation_types": [
+            "INSERT",
+            "UPDATE",
+            "DELETE",
+            "REPLACE"
+        ],
+        "database": "view-service",
+        "collection": "paylocity",
+        "service_name": "mernShopping",
+        "match": {},
+        "project": {},
+        "full_document": true,
+        "full_document_before_change": false,
+        "unordered": false
+    },
+    "function_name": "Atlas_Triggers_paylocityTrigger_1625153357",
+    "disabled": false
+}
