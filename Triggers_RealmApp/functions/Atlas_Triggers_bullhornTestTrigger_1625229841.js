@@ -9,6 +9,8 @@
  */
 exports = async function(changeEvent) {
   console.log('Updating Bullhorn Candiate...');
+
+  console.log('>>> ', JSON.stringify(changeEvent));
   
   if (!changeEvent.fullDocument) {
     console.log('Full document not available. This indicates that the document has been deleted.');
