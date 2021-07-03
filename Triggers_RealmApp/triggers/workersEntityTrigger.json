@@ -18,6 +18,6 @@
         "full_document_before_change": true,
         "unordered": false
     },
-    "function_name": "Atlas_Triggers_workersEntityTrigger_1625322278",
+    "function_name": "workersEntity-trigger",
     "disabled": false
 }

@@ -8,11 +8,11 @@
         "private": false
     },
     {
-        "name": "Atlas_Triggers_workersEntityTrigger_1625322278",
+        "name": "workersEntity-trigger",
         "private": false
     },
     {
-        "name": "workersEntityBullhornCandidate",
+        "name": "workersEntity-bullhornCandidateProcessor",
         "private": false
     }
 ]
