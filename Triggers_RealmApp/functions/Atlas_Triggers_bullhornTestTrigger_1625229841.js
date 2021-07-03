@@ -7,10 +7,10 @@
  *   Contains details about the updated document. The fullDocument property of this Object
  *   contains all document's fields with their existing and updated values.
  */
-exports = async function(changeEvent) {
+exports = async function(changeEvent, func2) {
   console.log('Updating Bullhorn Candiate...');
 
-  console.log('>>> ', JSON.stringify(changeEvent));
+  console.log('>>> ', JSON.stringify(func2));
   
   if (!changeEvent.fullDocument) {
     console.log('Full document not available. This indicates that the document has been deleted.');
