@@ -1,0 +1,23 @@
+{
+    "id": "60c9b0c663aff2f96d10923b",
+    "name": "newTestTrigger",
+    "type": "DATABASE",
+    "config": {
+        "operation_types": [
+            "INSERT",
+            "UPDATE",
+            "DELETE",
+            "REPLACE"
+        ],
+        "database": "view-service",
+        "collection": "bullhornCandidate",
+        "service_name": "mernShopping",
+        "match": {},
+        "project": {},
+        "full_document": true,
+        "full_document_before_change": true,
+        "unordered": false
+    },
+    "function_name": "Atlas_Triggers_newTestTrigger",
+    "disabled": false
+}
