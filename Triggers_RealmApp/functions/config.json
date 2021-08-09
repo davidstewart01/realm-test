@@ -14,5 +14,9 @@
     {
         "name": "workersEntity_bullhornCandidateProcessor",
         "private": false
-    }
+    },
+    {
+        "name": "Atlas_Triggers_newTestTrigger",
+        "private": false
+    },
 ]
