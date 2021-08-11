@@ -66,7 +66,9 @@
  * @param {Object} updatedBullhornClientCorporationsDocument
  *   The bullhornClientCorporations document that contains updates.
  */
- async function update360ClientsWithBullhornClient(client360Collection, clientsEntities, updatedBullhornClientCorporationsDocument) {
+ async function update360ClientsWithBullhornClientCorporations(
+   client360Collection, clientsEntities, updatedBullhornClientCorporationsDocument) {
+  
   for (let i = 0; i < clientsEntities.length; i++) {
     const clientsEntity = clientsEntities[i];
     const client360 = await client360Collection.findOne({ _id: clientsEntity.after.id });
