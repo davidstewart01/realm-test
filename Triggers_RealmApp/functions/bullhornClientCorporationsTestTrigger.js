@@ -23,9 +23,10 @@
   
   // handle delete event
   if (!changeEvent.fullDocument) {
+    console.log('>>>> idOfDeletedDocument', JSON.stringify(changeEvent))
     const idOfDeletedDocument = changeEvent.fullDocumentBeforeChange.id;
     
-    console.log('>>>> idOfDeletedDocument', JSON.stringify(changeEvent))
+    
 
     const clientsEntities =
       await clientsEntityCollection.find(
