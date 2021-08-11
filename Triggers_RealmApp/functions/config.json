@@ -1,22 +1,6 @@
 [
     {
-        "name": "Atlas_Triggers_bullhornTestTrigger_1625229841",
+        "name": "Atlas_Triggers_bullhornClientCorporationsTestTrigger",
         "private": false
-    },
-    {
-        "name": "Atlas_Triggers_paylocityTrigger_1625153357",
-        "private": false
-    },
-    {
-        "name": "Atlas_Triggers_workersEntityTrigger_1625322278",
-        "private": false
-    },
-    {
-        "name": "workersEntity_bullhornCandidateProcessor",
-        "private": false
-    },
-    {
-        "name": "Atlas_Triggers_newTestTrigger",
-        "private": false
-    },
+    }
 ]
