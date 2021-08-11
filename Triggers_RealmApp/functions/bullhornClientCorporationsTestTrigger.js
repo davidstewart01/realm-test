@@ -25,6 +25,8 @@
   if (!changeEvent.fullDocument) {
     const idOfDeletedDocument = changeEvent.fullDocumentBeforeChange.id;
     
+    console.log('>>>> idOfDeletedDocument', JSON.stringify(changeEvent))
+
     const clientsEntities =
       await clientsEntityCollection.find(
         { 'after.bullhorn_client_corporations_references': { $elemMatch: { $eq: idOfDeletedDocument } } }
