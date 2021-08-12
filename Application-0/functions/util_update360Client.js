@@ -28,7 +28,6 @@
       phone: clientsEntity.after.phone,
       dob: clientsEntity.after.dob,
       deleted: clientsEntity.after.deleted,
-      bullhornClientReferences: clientsEntity.after.bullhorn_client_references,
       primaryBullhornReference: clientsEntity.after.primary_bullhorn_reference,
     };
 
