@@ -3,6 +3,13 @@
     "type": "mongodb-atlas",
     "config": {
         "clusterName": "mernShopping",
+        "namespacePreimageConfigs": [
+            {
+                "collectionName": "bullhornCandidateCorporations",
+                "dbName": "view-service",
+                "recordPreimages": true
+            }
+        ],
         "readPreference": "primary",
         "wireProtocolEnabled": false
     },

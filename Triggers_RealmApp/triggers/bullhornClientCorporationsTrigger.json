@@ -1,0 +1,23 @@
+{
+    "id": "6114cf182ec400f6b5395bda",
+    "name": "bullhornClientCorporationsTrigger",
+    "type": "DATABASE",
+    "config": {
+        "operation_types": [
+            "INSERT",
+            "UPDATE",
+            "DELETE",
+            "REPLACE"
+        ],
+        "database": "view-service",
+        "collection": "bullhornCandidateCorporations",
+        "service_name": "mernShopping",
+        "match": {},
+        "project": {},
+        "full_document": true,
+        "full_document_before_change": true,
+        "unordered": false
+    },
+    "function_name": "bullhornClientCorporationsTestTrigger",
+    "disabled": false
+}
