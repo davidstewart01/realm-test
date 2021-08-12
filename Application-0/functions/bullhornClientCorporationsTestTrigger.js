@@ -23,20 +23,18 @@
   
   // handle delete event
   if (!changeEvent.fullDocument) {
-    console.log('>>>> idOfDeletedDocument..............', JSON.stringify(changeEvent))
+    console.log(`Deleting bullhorn client corporation.`);
     const idOfDeletedDocument = changeEvent.fullDocumentBeforeChange.id;
     
-    
-
     const clientsEntities =
       await clientsEntityCollection.find(
-        { 'after.bullhorn_client_corporations_references': { $elemMatch: { $eq: idOfDeletedDocument } } }
+        { 'after.bullhorn_client_references': { $elemMatch: { $eq: idOfDeletedDocument } } }
       ).toArray();
 
     if (clientsEntities && clientsEntities.length > 0) {
       await update360ClientsRemoveBullhornClientCorporations(client360Collection, clientsEntities, idOfDeletedDocument);
     } else {
-      console.log(`Universal ID does not exist for bullhorn client corporations entity: ${idOfDeletedDocument}`);
+      console.log(`Universal ID does not exist for bullhorn client entity: ${idOfDeletedDocument}`);
     }
 
     return true;
@@ -47,13 +45,13 @@
 
   const clientsEntities =
     await clientsEntityCollection.find(
-      { 'after.bullhorn_client_corporations_references': { $elemMatch: { $eq: updatedDocument.id } } }
+      { 'after.bullhorn_client_references': { $elemMatch: { $eq: updatedDocument.id } } }
     ).toArray();
 
   if (clientsEntities && clientsEntities.length > 0) {
     await update360ClientsWithBullhornClientCorporations(client360Collection, clientsEntities, updatedDocument);
   } else {
-    console.log(`Universal ID does not exist for bullhorn client corporations entity: ${updatedDocument.id}`);
+    console.log(`Universal ID does not exist for bullhorn client entity: ${updatedDocument.id}`);
   }
   
   return true;
@@ -76,7 +74,7 @@
     const clientsEntity = clientsEntities[i];
     const client360 = await client360Collection.findOne({ _id: clientsEntity.after.id });
 
-    // The bullhornClientCorporations data that will be added/updated in the client 360 bullhornClientCorporations array.
+    // The bullhornClientCorporations data to be added/updated in the client 360 bullhornClientCorporations array.
     const { _id, ...bullhornClientCorporationsData } = updatedBullhornClientCorporationsDocument;
   
     let updatedBullhornClientCorporations;
@@ -84,7 +82,8 @@
     if (client360 && client360.bullhornClientCorporations) {
       const bullhornClientCorporationsArr = [...client360.bullhornClientCorporations];
     
-      const candidate = bullhornClientCorporationsArr.filter(ref => ref.id === updatedBullhornClientCorporationsDocument.id);
+      const candidate = 
+        bullhornClientCorporationsArr.filter(ref => ref.id === updatedBullhornClientCorporationsDocument.id);
     
       if (!candidate || candidate.length === 0) {
         // Add the new bullhornClientCorporations to the existing array.
@@ -93,12 +92,12 @@
       }
       else {
         // Update an existing bullhornClientCorporations in the array.
-        updatedBullhornClientCorporations = bullhornClientCorporationsArr.map(existingCandidate => {
-          if (existingCandidate.id === updatedBullhornClientCorporationsDocument.id) {
+        updatedBullhornClientCorporations = bullhornClientCorporationsArr.map(existingBullhornClient => {
+          if (existingBullhornClient.id === updatedBullhornClientCorporationsDocument.id) {
             return bullhornClientCorporationsData;
           }
         
-          return existingCandidate;
+          return existingBullhornClient;
         });
       }
     }

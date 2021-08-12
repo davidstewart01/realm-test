@@ -28,7 +28,8 @@
       phone: clientsEntity.after.phone,
       dob: clientsEntity.after.dob,
       deleted: clientsEntity.after.deleted,
-      primaryBullhornClientCorporationsReference: clientsEntity.after.primary_bullhorn_client_corporations_reference,
+      bullhornClientReferences: clientsEntity.after.bullhorn_client_references,
+      primaryBullhornReference: clientsEntity.after.primary_bullhorn_reference,
     };
 
   const { id, ...clientsEntityData } = formattedClientData;
