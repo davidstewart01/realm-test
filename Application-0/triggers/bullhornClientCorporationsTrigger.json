@@ -1,0 +1,23 @@
+{
+    "id": "6114d71e4de2142fa820b42e",
+    "name": "bullhornClientCorporationsTrigger",
+    "type": "DATABASE",
+    "config": {
+        "operation_types": [
+            "INSERT",
+            "UPDATE",
+            "DELETE",
+            "REPLACE"
+        ],
+        "database": "view-service",
+        "collection": "bullhornCandidateCorporations",
+        "service_name": "mongodb-atlas",
+        "match": {},
+        "project": {},
+        "full_document": true,
+        "full_document_before_change": false,
+        "unordered": false
+    },
+    "function_name": "bullhornClientCorporationsTestTrigger",
+    "disabled": false
+}
