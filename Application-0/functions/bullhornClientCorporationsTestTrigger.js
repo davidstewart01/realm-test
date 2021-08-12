@@ -8,8 +8,6 @@
  *   contains all document's fields with their existing and updated values.
  */
  exports = async function(changeEvent) {
-  console.log('Updating Bullhorn Client Corporations...');
-
   const databaseName = 'view-service';
   const dataSourceName = 'mongodb-atlas';
 
@@ -39,6 +37,8 @@
 
     return true;
   }
+
+  console.log('Updating Bullhorn Client Corporations...');
 
   // handle other events
   const updatedDocument = changeEvent.fullDocument;
