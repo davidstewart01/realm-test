@@ -23,7 +23,7 @@
   
   // handle delete event
   if (!changeEvent.fullDocument) {
-    console.log('>>>> idOfDeletedDocument', JSON.stringify(changeEvent))
+    console.log('>>>> idOfDeletedDocument.................', JSON.stringify(changeEvent))
     const idOfDeletedDocument = changeEvent.fullDocumentBeforeChange.id;
     
     
