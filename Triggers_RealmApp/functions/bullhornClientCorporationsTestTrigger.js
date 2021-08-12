@@ -1,14 +1,14 @@
 /**
  * When the clientsEntity collection contains a document that has a reference to the 
- * updated document's bullhorn client corporations ID, add the updated document to 
- * the 360 client collection along with the universal ID.
+ * updated document's bullhorn ID, add the updated document to the 360 client collection
+ * along with the universal ID.
  * 
  * @param {Object} changeEvent
  *   Contains details about the updated document. The fullDocument property of this Object
  *   contains all document's fields with their existing and updated values.
  */
  exports = async function(changeEvent) {
-  console.log('Updating Bullhorn Client Corporations....');
+  console.log('Updating Bullhorn Client Corporations...');
 
   const databaseName = 'view-service';
   const dataSourceName = 'mernShopping';
@@ -26,6 +26,8 @@
     console.log('>>>> idOfDeletedDocument', JSON.stringify(changeEvent))
     const idOfDeletedDocument = changeEvent.fullDocumentBeforeChange.id;
     
+    
+
     const clientsEntities =
       await clientsEntityCollection.find(
         { 'after.bullhorn_client_corporations_references': { $elemMatch: { $eq: idOfDeletedDocument } } }
@@ -74,7 +76,7 @@
     const clientsEntity = clientsEntities[i];
     const client360 = await client360Collection.findOne({ _id: clientsEntity.after.id });
 
-    // The bullhornClientCorporations data to be added/updated in the client 360 bullhornClientCorporations array.
+    // The bullhornClientCorporations data that will be added/updated in the client 360 bullhornClientCorporations array.
     const { _id, ...bullhornClientCorporationsData } = updatedBullhornClientCorporationsDocument;
   
     let updatedBullhornClientCorporations;
@@ -82,8 +84,7 @@
     if (client360 && client360.bullhornClientCorporations) {
       const bullhornClientCorporationsArr = [...client360.bullhornClientCorporations];
     
-      const candidate = 
-        bullhornClientCorporationsArr.filter(ref => ref.id === updatedBullhornClientCorporationsDocument.id);
+      const candidate = bullhornClientCorporationsArr.filter(ref => ref.id === updatedBullhornClientCorporationsDocument.id);
     
       if (!candidate || candidate.length === 0) {
         // Add the new bullhornClientCorporations to the existing array.
