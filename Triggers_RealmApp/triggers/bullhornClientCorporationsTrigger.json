@@ -1,5 +1,5 @@
 {
-    "id": "6114cf182ec400f6b5395bda",
+    "id": "6114d061bc7c862b9cbc534e",
     "name": "bullhornClientCorporationsTrigger",
     "type": "DATABASE",
     "config": {
@@ -18,6 +18,6 @@
         "full_document_before_change": true,
         "unordered": false
     },
-    "function_name": "bullhornClientCorporationsTestTrigger",
+    "function_name": "Atlas_Triggers_bullhornClientCorporationsTrigger_1628754010",
     "disabled": false
 }
