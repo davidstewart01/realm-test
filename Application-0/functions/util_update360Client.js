@@ -1,6 +1,6 @@
 /**
  * Update the 360 client collection with the updated clientsEntity and
- * upstream entity (bullhornClientCorporations, salesforce, netsuite etc.) data.
+ * upstream entity (salesforce account etc.) data.
  * 
  * @param {Object} client360Collection
  *   The client 360 collection to be updated.
@@ -9,9 +9,9 @@
  * @param {Object} entity
  *   An object containing an entity's array of items. For example:
  *   {
- *     bullhornClientCorporations: [
+ *     salesforceAccount: [
  *       {
- *         id: '1234',
+ *         id: 1234,
  *         ...
  *       }
  *     ]
@@ -22,18 +22,25 @@
     {
       id: clientsEntity.after.id,
       uid: clientsEntity.after.id,
-      firstName: clientsEntity.after.firstname,
-      lastName: clientsEntity.after.lastname,
+      name: clientsEntity.after.name,
       email: clientsEntity.after.email,
       phone: clientsEntity.after.phone,
-      dob: clientsEntity.after.dob,
+      address: {
+        address1: clientsEntity.after.address1,
+        address2: clientsEntity.after.address2,
+        city: clientsEntity.after.city,
+        state: clientsEntity.after.state,
+        zip: clientsEntity.after.zip,
+      },
       deleted: clientsEntity.after.deleted,
       primaryBullhornReference: clientsEntity.after.primary_bullhorn_reference,
+      primarySalesforceReference: clientsEntity.after.primary_salesforce_reference,
+      primaryNetsuiteReference: clientsEntity.after.primary_netsuite_reference,
     };
 
   const { id, ...clientsEntityData } = formattedClientData;
   const upsertData = { ...clientsEntityData, ...entity }
-  
+
   return await client360Collection.updateOne(
     { _id: id },
     { 
@@ -45,4 +52,4 @@
       upsert: true
     }
   );
-}
+} 
