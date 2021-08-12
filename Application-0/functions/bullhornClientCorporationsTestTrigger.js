@@ -11,7 +11,7 @@
   console.log('Updating Bullhorn Client Corporations...');
 
   const databaseName = 'view-service';
-  const dataSourceName = 'mernShopping';
+  const dataSourceName = 'mongodb-atlas';
 
   const client360Collection = context.services.get(dataSourceName)
   .db(databaseName)
