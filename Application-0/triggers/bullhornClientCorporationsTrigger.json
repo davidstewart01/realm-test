@@ -1,5 +1,5 @@
 {
-    "id": "6114d71e4de2142fa820b42e",
+    "id": "6114d736dfedf91751c11cdd",
     "name": "bullhornClientCorporationsTrigger",
     "type": "DATABASE",
     "config": {
@@ -15,7 +15,7 @@
         "match": {},
         "project": {},
         "full_document": true,
-        "full_document_before_change": false,
+        "full_document_before_change": true,
         "unordered": false
     },
     "function_name": "bullhornClientCorporationsTestTrigger",
