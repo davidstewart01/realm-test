@@ -1,0 +1,22 @@
+{
+    "name": "bullhornClientCorporationsTrigger",
+    "type": "DATABASE",
+    "config": {
+        "operation_types": [
+            "INSERT",
+            "UPDATE",
+            "DELETE",
+            "REPLACE"
+        ],
+        "database": "view-service",
+        "collection": "bullhornClientCorporation",
+        "service_name": "mongodb-atlas",
+        "match": {},
+        "project": {},
+        "full_document": true,
+        "full_document_before_change": false,
+        "unordered": false
+    },
+    "function_name": "bullhornClientCorporationsTrigger",
+    "disabled": false
+}
