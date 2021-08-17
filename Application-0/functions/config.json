@@ -1,14 +1,14 @@
 [
     {
+        "name": "util_update360Client",
+        "private": false
+    },
+    {
         "name": "bullhornClientCorporationsTestTrigger",
         "private": false
     },
     {
         "name": "netsuiteCustomerTrigger",
-        "private": false
-    },
-    {
-        "name": "util_update360Client",
         "private": false
     }
 ]
