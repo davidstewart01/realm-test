@@ -18,5 +18,9 @@
     {
         "name": "clientsEntityTrigger",
         "private": false
+    },
+    {
+        "name": "refreshClient360Trigger",
+        "private": false
     }
 ]
