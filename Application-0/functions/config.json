@@ -1,5 +1,13 @@
 [
     {
+        "name": "bullhornClientCorporationsTrigger",
+        "private": false
+    },
+    {
+        "name": "clientsEntityTrigger",
+        "private": false
+    },
+    {
         "name": "clientsEntity_bullhornClientCorporationProcessor",
         "private": false
     },
@@ -13,14 +21,6 @@
     },
     {
         "name": "util_update360Client",
-        "private": false
-    },
-    {
-        "name": "bullhornClientCorporationsTrigger",
-        "private": false
-    },
-    {
-        "name": "clientsEntityTrigger",
         "private": false
     }
 ]
