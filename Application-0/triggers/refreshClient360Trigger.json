@@ -3,8 +3,8 @@
     "name": "refreshClient360Trigger",
     "type": "SCHEDULED",
     "config": {
-        "schedule": "13 11 * * *"
+        "schedule": "*/30 * * * *"
     },
     "function_name": "refreshClient360Trigger",
-    "disabled": true
+    "disabled": false
 }
