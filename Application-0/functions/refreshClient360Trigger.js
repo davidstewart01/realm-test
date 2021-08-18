@@ -34,5 +34,7 @@
       });
   });
 
+  console.log('>>>>>> ', JSON.stringify(bulkUpdates));
+
   await clientsEntityCollection.bulkWrite(bulkUpdates); 
 }
