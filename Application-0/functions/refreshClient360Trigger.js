@@ -26,15 +26,14 @@
           },
           "update" : {
             $set : {
-              ...client
+              ...client,
+              refresh: Math.random() * (1000000 - 1 + 1) + 1
             }
           },
           upsert: true
         }
       });
   });
-
-  console.log('>>>>>> ', JSON.stringify(bulkUpdates));
 
   await clientsEntityCollection.bulkWrite(bulkUpdates); 
 }
