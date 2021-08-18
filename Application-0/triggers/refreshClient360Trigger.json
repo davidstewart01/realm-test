@@ -6,5 +6,5 @@
         "schedule": "*/1 * * * *"
     },
     "function_name": "refreshClient360Trigger",
-    "disabled": false
+    "disabled": true
 }
