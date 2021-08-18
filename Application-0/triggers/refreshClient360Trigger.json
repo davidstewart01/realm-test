@@ -1,9 +1,10 @@
 {
+    "id": "611cbc0066a749a6a06537a0",
     "name": "refreshClient360Trigger",
     "type": "SCHEDULED",
     "config": {
         "schedule": "*/1 * * * *"
     },
     "function_name": "refreshClient360Trigger",
-    "disabled": true
+    "disabled": false
 }
