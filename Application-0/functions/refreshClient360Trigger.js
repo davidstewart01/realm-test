@@ -27,7 +27,7 @@
           "update" : {
             $set : {
               ...client,
-              refresh: Math.random() * (1000000 - 1 + 1) + 1
+              refreshClient: new Date().getTime()
             }
           },
           upsert: true
