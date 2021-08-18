@@ -10,5 +10,13 @@
     {
         "name": "netsuiteCustomerTrigger",
         "private": false
+    },
+    {
+        "name": "clientsEntity_bullhornClientCorporationProcessor",
+        "private": false
+    },
+    {
+        "name": "clientsEntityTrigger",
+        "private": false
     }
 ]

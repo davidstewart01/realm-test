@@ -1,0 +1,22 @@
+{
+    "name": "clientsEntityTrigger",
+    "type": "DATABASE",
+    "config": {
+        "operation_types": [
+            "INSERT",
+            "UPDATE",
+            "DELETE",
+            "REPLACE"
+        ],
+        "database": "view-service",
+        "collection": "clientsEntity",
+        "service_name": "mongodb-atlas",
+        "match": {},
+        "project": {},
+        "full_document": true,
+        "full_document_before_change": true,
+        "unordered": false
+    },
+    "function_name": "clientsEntityTrigger",
+    "disabled": false
+}
