@@ -34,4 +34,5 @@
       });
   });
 
-  await clientsEntityCollection.bulkWrite(bulkUpdates);
+  await clientsEntityCollection.bulkWrite(bulkUpdates); 
+}
