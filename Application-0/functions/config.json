@@ -1,13 +1,5 @@
 [
     {
-        "name": "refreshClient360Trigger",
-        "private": false
-    },
-    {
-        "name": "util_update360Client",
-        "private": false
-    },
-    {
         "name": "bullhornClientCorporationsTrigger",
         "private": false
     },
@@ -21,6 +13,14 @@
     },
     {
         "name": "netsuiteCustomerTrigger",
+        "private": false
+    },
+    {
+        "name": "refreshClient360Trigger",
+        "private": false
+    },
+    {
+        "name": "util_update360Client",
         "private": false
     }
 ]
