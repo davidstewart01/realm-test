@@ -21,6 +21,9 @@
   
   // handle delete event
   if (!changeEvent.fullDocument) {
+
+    console.log('>>> Deleted document id: ', changeEvent.documentKey._id);
+
     console.log(`Deleting bullhorn client corporation.`);
     const idOfDeletedDocument = changeEvent.fullDocumentBeforeChange.id;
     
