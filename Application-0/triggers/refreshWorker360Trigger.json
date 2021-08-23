@@ -1,9 +1,10 @@
 {
+    "id": "61235f4d15c436efbe624049",
     "name": "refreshWorker360Trigger",
     "type": "SCHEDULED",
     "config": {
-        "schedule": "0 0 * * *"
+        "schedule": "15 13 * * *"
     },
     "function_name": "refreshWorker360Trigger",
-    "disabled": true
+    "disabled": false
 }

@@ -1,54 +1,6 @@
 [
     {
-        "name": "bullhornCandidateTrigger",
-        "private": false
-    },
-    {
-        "name": "paylocityEmployeeTrigger",
-        "private": false
-    },
-    {
-        "name": "workersEntityTrigger",
-        "private": false
-    },
-    {
-        "name": "workersEntity_bullhornCandidateProcessor",
-        "private": false
-    },
-    {
-        "name": "workersEntity_paylocityEmployeeProcessor",
-        "private": false
-    },
-    {
-        "name": "util_update360Worker",
-        "private": false
-    },
-    {
-        "name": "paylocityPayStatementsTrigger",
-        "private": false
-    },
-    {
-        "name": "paylocityPayStatementTrigger",
-        "private": false
-    },
-    {
-        "name": "workersEntity_paylocityPayStatementProcessor",
-        "private": false
-    },
-    {
-        "name": "workersEntity_deleteWorker360",
-        "private": false
-    },
-    {
-        "name": "refreshWorker360Trigger",
-        "private": false
-    },
-    {
-        "name": "refreshClient360Trigger",
-        "private": false
-    },
-    {
-        "name": "bullhornClientCorporationTrigger",
+        "name": "clientsEntity_deleteClient360",
         "private": false
     },
     {
@@ -56,15 +8,55 @@
         "private": false
     },
     {
-        "name": "salesforceAccountTrigger",
-        "private": false
-    },
-    {
         "name": "clientsEntity_bullhornClientCorporationProcessor",
         "private": false
     },
     {
-        "name": "clientsEntity_deleteClient360",
+        "name": "paylocityPayStatementsTrigger",
+        "private": false
+    },
+    {
+        "name": "workersEntity_bullhornCandidateProcessor",
+        "private": false
+    },
+    {
+        "name": "workersEntity_deleteWorker360",
+        "private": false
+    },
+    {
+        "name": "bullhornCandidateTrigger",
+        "private": false
+    },
+    {
+        "name": "refreshClient360Trigger",
+        "private": false
+    },
+    {
+        "name": "netsuiteCustomerTrigger",
+        "private": false
+    },
+    {
+        "name": "util_update360Worker",
+        "private": false
+    },
+    {
+        "name": "paylocityPayStatementTrigger",
+        "private": false
+    },
+    {
+        "name": "refreshWorker360Trigger",
+        "private": false
+    },
+    {
+        "name": "salesforceAccountTrigger",
+        "private": false
+    },
+    {
+        "name": "workersEntity_paylocityPayStatementProcessor",
+        "private": false
+    },
+    {
+        "name": "clientsEntityTrigger",
         "private": false
     },
     {
@@ -76,12 +68,19 @@
         "private": false
     },
     {
-        "name": "clientsEntity_Trigger",
+        "name": "paylocityEmployeeTrigger",
         "private": false
     },
     {
-      "name": "netsuiteCustomerTrigger",
-      "private": false
+        "name": "workersEntityTrigger",
+        "private": false
+    },
+    {
+        "name": "workersEntity_paylocityEmployeeProcessor",
+        "private": false
+    },
+    {
+        "name": "bullhornClientCorporationsTrigger",
+        "private": false
     }
-  ]
-  
+]
