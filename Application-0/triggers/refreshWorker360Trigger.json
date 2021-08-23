@@ -6,5 +6,5 @@
         "schedule": "45 13 * * *"
     },
     "function_name": "refreshWorker360Trigger",
-    "disabled": true
+    "disabled": false
 }
