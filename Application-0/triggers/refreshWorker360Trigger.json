@@ -1,9 +1,9 @@
 {
-    "name": "refreshClient360Trigger",
+    "name": "refreshWorker360Trigger",
     "type": "SCHEDULED",
     "config": {
         "schedule": "0 0 * * *"
     },
-    "function_name": "refreshClient360Trigger",
+    "function_name": "refreshWorker360Trigger",
     "disabled": true
 }

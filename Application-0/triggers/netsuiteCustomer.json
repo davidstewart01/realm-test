@@ -1,5 +1,5 @@
 {
-    "name": "clientsEntityTrigger",
+    "name": "netsuiteCustomerTrigger",
     "type": "DATABASE",
     "config": {
         "operation_types": [
@@ -9,14 +9,14 @@
             "REPLACE"
         ],
         "database": "view-service",
-        "collection": "clientsEntity",
+        "collection": "netsuiteCustomer",
         "service_name": "mongodb-atlas",
         "match": {},
         "project": {},
         "full_document": true,
-        "full_document_before_change": true,
+        "full_document_before_change": false,
         "unordered": false
     },
-    "function_name": "clientsEntityTrigger",
+    "function_name": "netsuiteCustomerTrigger",
     "disabled": false
 }

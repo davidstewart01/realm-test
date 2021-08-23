@@ -1,0 +1,51 @@
+/**
+ * Iterates through all bullhornCandidate reference IDs and updates the 360 worker collection
+ * with the corresponding bullhornCandidate entities. The process creates a new array of entities
+ * for the iteration, so any previous entities linked that are no longer referenced will be removed.
+ * 
+ * @param databaseName
+ *   The view service database name.
+ * @param dataSourceName
+ *   The data source that the database belongs to.
+ * @param {Object} updatedWorkersEntity
+ *   The workers entity collection that updated.
+ * @param entityArray
+ *   The the bullhornCandidate array to to be processed.
+ */
+ exports = async function(databaseName, dataSourceName, updatedWorkersEntity, entityArray) {
+  
+  const worker360Collection = context.services.get(dataSourceName)
+    .db(databaseName)
+    .collection('360_Worker_v1');
+
+  const bullhornCandidateCollection = context.services.get(dataSourceName)
+    .db(databaseName)
+    .collection('bullhornCandidate');
+  
+  let updatedBullhornCandidate = [];
+  
+  for (let i = 0; i < entityArray.length; i++) {
+    const candidate = entityArray[i];
+    const bullhornCandidate = await bullhornCandidateCollection.findOne({ id: candidate.id });
+    
+    if (bullhornCandidate) {
+        const {
+          _id,
+          ...candidateData
+        } = bullhornCandidate;
+      updatedBullhornCandidate.push(candidateData);
+    }
+    else {
+      console.log(`No bullhornCandidate data was available for id: ${candidate.id}`);
+    }
+  }
+  
+  return await context.functions.execute(
+    "util_update360Worker",
+    worker360Collection,
+    updatedWorkersEntity,
+    {
+      bullhornCandidate: updatedBullhornCandidate
+    }
+  );
+}

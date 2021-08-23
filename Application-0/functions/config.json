@@ -1,14 +1,46 @@
 [
     {
-        "name": "clientsEntityTrigger",
+        "name": "bullhornCandidateTrigger",
         "private": false
     },
     {
-        "name": "clientsEntity_bullhornClientCorporationProcessor",
+        "name": "paylocityEmployeeTrigger",
         "private": false
     },
     {
-        "name": "netsuiteCustomerTrigger",
+        "name": "workersEntityTrigger",
+        "private": false
+    },
+    {
+        "name": "workersEntity_bullhornCandidateProcessor",
+        "private": false
+    },
+    {
+        "name": "workersEntity_paylocityEmployeeProcessor",
+        "private": false
+    },
+    {
+        "name": "util_update360Worker",
+        "private": false
+    },
+    {
+        "name": "paylocityPayStatementsTrigger",
+        "private": false
+    },
+    {
+        "name": "paylocityPayStatementTrigger",
+        "private": false
+    },
+    {
+        "name": "workersEntity_paylocityPayStatementProcessor",
+        "private": false
+    },
+    {
+        "name": "workersEntity_deleteWorker360",
+        "private": false
+    },
+    {
+        "name": "refreshWorker360Trigger",
         "private": false
     },
     {
@@ -16,11 +48,40 @@
         "private": false
     },
     {
+        "name": "bullhornClientCorporationTrigger",
+        "private": false
+    },
+    {
         "name": "util_update360Client",
         "private": false
     },
     {
-        "name": "bullhornClientCorporationsTrigger",
+        "name": "salesforceAccountTrigger",
         "private": false
+    },
+    {
+        "name": "clientsEntity_bullhornClientCorporationProcessor",
+        "private": false
+    },
+    {
+        "name": "clientsEntity_deleteClient360",
+        "private": false
+    },
+    {
+        "name": "clientsEntity_netsuiteCustomerProcessor",
+        "private": false
+    },
+    {
+        "name": "clientsEntity_salesforceAccountProcessor",
+        "private": false
+    },
+    {
+        "name": "clientsEntity_Trigger",
+        "private": false
+    },
+    {
+      "name": "netsuiteCustomerTrigger",
+      "private": false
     }
-]
+  ]
+  

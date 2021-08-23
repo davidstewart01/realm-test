@@ -8,6 +8,8 @@
  *   contains all document's fields with their existing and updated values.
  */
  exports = async function(changeEvent) {
+  console.log('In netsuiteCustomerTrigger.');
+
   const databaseName = 'view-service';
   const dataSourceName = 'mongodb-atlas';
 
@@ -21,7 +23,7 @@
   
   // handle delete event
   if (!changeEvent.fullDocument) {
-    console.log(`Deleting Netsuite Customer...`);
+    console.log(`netsuiteCustomer document with id '${changeEvent.documentKey._id}' has been deleted.`);
     const idOfDeletedDocument = changeEvent.fullDocumentBeforeChange.id;
     
     const clientsEntities =
@@ -30,6 +32,7 @@
       ).toArray();
 
     if (clientsEntities && clientsEntities.length > 0) {
+      console.log('Removing Netsuite Customer from 360_Client.');
       await update360ClientsRemoveNetsuiteCustomer(client360Collection, clientsEntities, idOfDeletedDocument);
     } else {
       console.log(`Universal ID does not exist for netsuite client entity: ${idOfDeletedDocument}`);
@@ -37,8 +40,6 @@
 
     return true;
   }
-
-  console.log('Updating Netsuite Customer Corporations...');
 
   // handle other events
   const updatedDocument = changeEvent.fullDocument;
@@ -49,6 +50,7 @@
     ).toArray();
 
   if (clientsEntities && clientsEntities.length > 0) {
+    console.log(`Updating 360_Client with netsuiteCustomer: ${updatedDocument.id}`);
     await update360ClientsWithNetsuiteCustomer(client360Collection, clientsEntities, updatedDocument);
   } else {
     console.log(`Universal ID does not exist for netsuite client entity: ${updatedDocument.id}`);
@@ -79,19 +81,19 @@
   
     let updatedNetsuiteCustomer;
   
-    if (client360 && client360.netsuiteCustomer) {
-      const netsuiteCustomerArr = [...client360.netsuiteCustomer];
+    if (client360 && client360.netsuiteCustomers) {
+      const netsuiteCustomerArr = [...client360.netsuiteCustomers];
     
-      const candidate = 
+      const customer = 
         netsuiteCustomerArr.filter(ref => ref.id === updatedNetsuiteCustomerDocument.id);
     
-      if (!candidate || candidate.length === 0) {
-        // Add the new netsuiteCustomer to the existing array.
+      if (!customer || customer.length === 0) {
+        console.log(`Adding new netsuiteCustomer reference to existing 360_Client document.`);
         updatedNetsuiteCustomer = netsuiteCustomerArr;
         updatedNetsuiteCustomer.push(netsuiteCustomerClientData);
       }
       else {
-        // Update an existing netsuiteCustomer in the array.
+        console.log(`Updating netsuiteCustomer in existing 360_Client document.`);
         updatedNetsuiteCustomer = netsuiteCustomerArr.map(existingNetsuiteCustomer => {
           if (existingNetsuiteCustomer.id === updatedNetsuiteCustomerDocument.id) {
             return netsuiteCustomerClientData;
@@ -102,7 +104,7 @@
       }
     }
     else {
-      // Create a brand new netsuiteCustomer array.
+      console.log(`Adding new netsuiteCustomer to 360_Client document.`);
       updatedNetsuiteCustomer = [netsuiteCustomerClientData];
     }
     
@@ -111,7 +113,7 @@
       client360Collection,
       clientsEntity,
       {
-        netsuiteCustomer: updatedNetsuiteCustomer
+        netsuiteCustomers: updatedNetsuiteCustomer
       }
     );
   }
@@ -134,8 +136,8 @@
     const clientsEntity = clientsEntities[i];
     const client360 = await client360Collection.findOne({ _id: clientsEntity.after.id });
 
-    if (client360 && client360.netsuiteCustomer) {
-      const netsuiteCustomerArr = [...client360.netsuiteCustomer];
+    if (client360 && client360.netsuiteCustomers) {
+      const netsuiteCustomerArr = [...client360.netsuiteCustomers];
       
       const updatedNetsuiteCustomer = 
         netsuiteCustomerArr.filter(ref => ref.id !== idOfDeletedDocument);
@@ -145,7 +147,7 @@
         client360Collection,
         clientsEntity,
         {
-          netsuiteCustomer: updatedNetsuiteCustomer
+          netsuiteCustomers: updatedNetsuiteCustomer
         }
       );
     }

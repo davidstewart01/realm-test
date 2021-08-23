@@ -2,7 +2,7 @@
  * Refresh all client360 entities by re-processing all clientsEntities and their linked/referenced data
  */
  exports = async function() {
-  console.log("In refreshClient360 trigger...");
+  console.log("In refreshClient360Trigger.");
 
   const databaseName = 'view-service';
   const dataSourceName = 'mongodb-atlas';
@@ -20,12 +20,12 @@
   clientDocuments.forEach((client) => {
     bulkUpdates.push(
       { 
-        updateOne : {
-          "filter" : { 
-            _id : client._id
+        updateOne: {
+          "filter": { 
+            _id: client._id
           },
-          "update" : {
-            $set : {
+          "update": {
+            $set: {
               ...client,
               refreshClient: new Date().getTime()
             }

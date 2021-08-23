@@ -1,5 +1,5 @@
 {
-    "name": "clientsEntityTrigger",
+    "name": "paylocityPayStatementsTrigger",
     "type": "DATABASE",
     "config": {
         "operation_types": [
@@ -9,7 +9,7 @@
             "REPLACE"
         ],
         "database": "view-service",
-        "collection": "clientsEntity",
+        "collection": "paylocityPayStatements",
         "service_name": "mongodb-atlas",
         "match": {},
         "project": {},
@@ -17,6 +17,6 @@
         "full_document_before_change": true,
         "unordered": false
     },
-    "function_name": "clientsEntityTrigger",
+    "function_name": "paylocityPayStatementsTrigger",
     "disabled": false
 }
