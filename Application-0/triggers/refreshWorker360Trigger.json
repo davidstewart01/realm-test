@@ -3,7 +3,7 @@
     "name": "refreshWorker360Trigger",
     "type": "SCHEDULED",
     "config": {
-        "schedule": "19 13 * * *"
+        "schedule": "25 13 * * *"
     },
     "function_name": "refreshWorker360Trigger",
     "disabled": false
