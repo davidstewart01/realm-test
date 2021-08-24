@@ -3,8 +3,8 @@
     "name": "refreshWorker360Trigger",
     "type": "SCHEDULED",
     "config": {
-        "schedule": "*/10 * * * *"
+        "schedule": "*/1 * * * *"
     },
     "function_name": "refreshWorker360Trigger",
-    "disabled": false
+    "disabled": true
 }
