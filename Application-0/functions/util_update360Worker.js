@@ -17,7 +17,25 @@
  *     ]
  *   }
  */ 
-exports = async function(worker360Collection, workersEntity, entity) {
+ exports = async function(worker360Collection, workersEntity, entity) {
+  let bullhornCandidateIds = [];
+  let paylocityEmployeeIds = [];
+  let paylocityCompanyIds = [];
+
+  if (workersEntity.after.bullhorn_candidate_references && workersEntity.after.bullhorn_candidate_references.length) {
+    bullhornCandidateIds = workersEntity.after.bullhorn_candidate_references.map(id => {
+      return `${id}`;
+    });
+  }
+
+  if (workersEntity.after.paylocity_candidate_references && workersEntity.after.paylocity_candidate_references.length) {
+    workersEntity.after.paylocity_candidate_references.forEach(id => {
+      const ids = id.split('.');
+      paylocityCompanyIds.push(ids[0]);
+      paylocityEmployeeIds.push(ids[1]);
+    });
+  }
+
   const formattedWorkerData =
     {
       id: workersEntity.after.id,
@@ -28,6 +46,9 @@ exports = async function(worker360Collection, workersEntity, entity) {
       phone: workersEntity.after.phone,
       dob: workersEntity.after.dob,
       deleted: workersEntity.after.deleted,
+      bullhornCandidateIds,
+      paylocityEmployeeIds,
+      paylocityCompanyIds,
       primaryBullhornReference: workersEntity.after.primary_bullhorn_reference,
       primaryPaylocityReference: workersEntity.after.primary_paylocity_reference,
     };
